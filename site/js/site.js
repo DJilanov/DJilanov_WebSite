@@ -25,36 +25,52 @@
  *
  */
 (function (e) {
-    // var previousScroll = 0;
-    // var counter=1;
-    // $(window).scroll(function(){
-    //     event.preventDefault();
-    //     var currentScroll = $(this).scrollTop();
-    //     if (currentScroll > previousScroll){
-    //         counter++;
-    //         debugger;
-    //         $("#floatdiv nav a:nth-child("+counter+")").click();
-    //     } else {
-    //         counter--;
-    //         $("#floatdiv nav a:nth-child("+counter+")").click();
-    //     }
-    //     previousScroll = currentScroll;
-    //     if(counter<1)
-    //     {
-    //         counter=1;
-    //     }
-    //     if(counter>4)
-    //     {
-    //         counter=4;
-    //     }
-    // });
+    /* dot nav */
+$(window).bind('scroll',function(e){
+  redrawDotNav();
+});
+
+function redrawDotNav(){
+  debugger;
+    var topNavHeight = 50;
+    var numDivs = $('section').length;
+    
+    $('#dotNav li a').removeClass('active').parent('li').removeClass('active');     
+    $('section').each(function(i,item){
+      var ele = $(item), nextTop;
+      
+      console.log(ele.next().html());
+      
+      if (typeof ele.next().offset() != "undefined") {
+        nextTop = ele.next().offset().top;
+      }
+      else {
+        nextTop = $(document).height();
+      }
+      
+      if (ele.offset() !== null) {
+        thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numDivs);
+      }
+      else {
+        thisTop = 0;
+      }
+      
+      var docTop = $(document).scrollTop()+topNavHeight;
+      
+      if(docTop >= thisTop && (docTop < nextTop)){
+        $('#dotNav li').eq(i).addClass('active');
+      }
+    });   
+}
+
+/* end dot nav */
 })(jQuery),
 function () {
     $(function () {
         var e;
         return e = function () {
            
-        }, $("[role=navigation] a, .teaser .button").click(function () {
+        }, $("[role=navigation] a, .teaser .button,#dotNav ul li").click(function () {
             var e;
             return e = $("body").find($(this).attr("href").split("/").pop()), $("html, body").animate({
                 scrollTop: e.offset().top
