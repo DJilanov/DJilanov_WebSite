@@ -897,11 +897,13 @@ body{
     margin: 10px 10px 0px 0px;
     width: 12px;
     vertical-align:bottom;
+    opacity:0.4;
 }
 #dotNav li.active {
     background-color: #ffffff;
     background-image: -moz-linear-gradient(center top , #FFFFFF, #EEEEEE);
     background-repeat: repeat-x;
+    opacity:1.0;
 }
 #dotNav li:hover {
     background: none repeat scroll 0 0 #EEEEEE;
