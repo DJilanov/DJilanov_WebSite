@@ -915,6 +915,9 @@ body{
     position: relative;
     top:-5px;
 }
+.bottomHeader{
+    margin-top:50%;
+}
 @media only screen and (max-width: 999px) and (max-height: 769px) {
     .teaser{
         height:768px !important;
