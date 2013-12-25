@@ -1166,14 +1166,22 @@ body{
         max-width: 80% !important;
     }
 }
-@media only screen and (min-height: 701px) and (max-height: 800px) {
+@media only screen and (min-height: 701px) and (max-height: 800px) and (min-width: 1000px){
     .about {  /*background top*/
-        background-size: 700px 700px !important;
+        background-size: 800px 120% !important;
+    }
+    .bottomHeader h2{
+        margin-top:-10% !important;
     }
 }
-@media only screen and (min-height: 601px) and (max-height: 700px) {
+@media only screen and (min-height: 601px) and (max-height: 700px) and (min-width: 1000px){
     .about {  /*background top*/
-        background-size: 600px 600px !important;
+        background-size: 50% 120% !important;
+    }
+}
+@media only screen and (min-height: 501px) and (max-height: 600px) and (min-width: 1000px){
+    .about {  /*background top*/
+        background-size: 50% 120% !important;
     }
 }
 @media only screen and (min-height: 901px) and (max-height: 940px) and (min-width: 1000px){
