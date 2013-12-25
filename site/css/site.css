@@ -1058,7 +1058,7 @@ body{
         height:700px !important;
     }
     .about {
-        height:768px !important;
+        height:950px !important;
     }
     #end {
         height:768px !important;
@@ -1071,6 +1071,9 @@ body{
     }
     .about p{
         font-size: 1.6em !important;
+    }
+    .bottomHeader h2{
+        margin-top:-10% !important;
     }
 }
 
@@ -1097,7 +1100,82 @@ body{
         font-size: 1.6em !important;
     }
 }
-
+@media only screen and (min-height: 801px) and (max-height: 900px) {
+    .about {  /*background top*/
+        background-size: 800px !important;
+    }
+}
+/* android phones */
+@media only screen and (max-height: 640px) and (max-width: 480px) and (min-height: 400px) and (min-width: 220px){
+    .about {  /*background top*/
+        background-size: 800px !important;
+    }
+    .teaser{
+        height:800px !important;
+    }
+    .dribbble{
+        height:800px !important;
+    }
+    .about {
+        height:3100px !important;
+    }
+    #end {
+        height:800px !important;
+    }
+    #floatdiv{
+        margin-top:40%;
+    }
+    [role=navigation] {
+        margin-top:13%;
+    }
+    .about p{
+        font-size: 1.6em !important;
+    }
+    .button {
+        font-size:20px !important;
+        max-width: 80% !important;
+    }
+}
+@media only screen and (max-height: 400px) and (max-width: 480px) and (min-height: 300px) and (min-width: 220px){
+    .about {  /*background top*/
+        background-size: 800px !important;
+    }
+    .teaser{
+        height:800px !important;
+    }
+    .dribbble{
+        height:800px !important;
+    }
+    .about {
+        height:2500px !important;
+    }
+    #end {
+        height:800px !important;
+    }
+    #floatdiv{
+        margin-top:40%;
+    }
+    [role=navigation] {
+        margin-top:13%;
+    }
+    .about p{
+        font-size: 1.6em !important;
+    }
+    .button {
+        font-size:20px !important;
+        max-width: 80% !important;
+    }
+}
+@media only screen and (min-height: 701px) and (max-height: 800px) {
+    .about {  /*background top*/
+        background-size: 700px 700px !important;
+    }
+}
+@media only screen and (min-height: 601px) and (max-height: 700px) {
+    .about {  /*background top*/
+        background-size: 600px 600px !important;
+    }
+}
 @media only screen and (min-height: 901px) and (max-height: 940px) and (min-width: 1000px){
     .teaser{
         height:1030px !important;
