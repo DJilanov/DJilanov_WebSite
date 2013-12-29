@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>
+			Projects
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta content="width=device-width, initial-scale=1" name="viewport">
+	    <meta charset="utf-8">
+	    <meta content="Freelancing Web and Mobile Interaction Designer based in Sofia, Bulgaria." name="description">
+	    <title>Web &amp; Mobile UX/UI Designer — Dimitar Jilanov</title>
+	    <link href="../css/normalize.css" media="screen" rel="stylesheet" type="text/css">
+	    <link href="../css/site.css" media="screen" rel="stylesheet" type="text/css">
+	    <link href="../font-awesome-4.0.3/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+	    <script src="../js/jquery.min.js" ></script>
+	    <script src="../js/site.js" ></script>
+	    <script src="../js/script.js"></script>
+	    <script src="../js/floating-1.12.js"></script>
+	    <script src="../js/statefullButtons.js"></script>
+	    <script src="../bootstrap-3.0.3-dist/dist/js/bootstrap.min.js"></script>
+	    <link href="../bootstrap-3.0.3-dist/dist/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+	    <script src="./js.js" ></script>
+	    <link href="./css.css" media="screen" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="dribbble" style="margin-top:-5%;">
+		  <header>
+		    <h2>
+		      Statefull buttons
+		      <a href="https://github.com/DJilanov/Statefull_Butttons">Github</a>
+		    </h2>
+		  </header>
+		  <p>
+		  	<button id="select" type="submit" class="btn btn-default" style="margin-left:40%; width:170px;">
+			  <span class="default " data-state="default" style="background-color:inherit;"><i class="fa test fa-question"></i>Hey i'm default</span>
+			  <span class="working hide hidden" data-state="working" style="background-color:inherit;"><i class="fa test fa-spinner fa-spin"></i> Hey i'm working </span>
+			  <span class="success hide hidden" data-state="success" style="background-color:inherit;"><i class="fa test fa-check"></i> Hey i'm success </span>
+			  <span class="error hide hidden" data-state="error" style="background-color:inherit;"><i class="fa test fa-ban"></i>  Hey i'm error </span>
+			</button>
+		  </p>
+		  <div class="row" style="text-align: center;">
+		  	The button is constructed by 4 spans with code:
+		  	<div style="margin-top:5%;"> 
+		  		span class="default" data-state="default"
+		  	</div>
+		  	<div> 
+		  		span class="working" data-state="working"
+		  	</div>
+		  	<div> 
+		  		span class="success" data-state="success"
+		  	</div>
+		  	<div> 
+		  		span class="error" data-state="error"
+		  	</div>
+		  	<div style="margin-top:5%;"> 
+		  		You can set the class with every type of class you want. We only use the data-state attribute. <br/>
+		  		When we want to change state we just type:		  		
+		  	</div>
+	  		<div style="margin-top:5%;"> 
+		  		setState($(".btn"),"working")
+		  	</div>
+	  		<div style="margin-top:5%;"> 
+		  		Where the first argument is the object we want to change state and the second is the state we go.
+		  		You can easy test it right here
+			</div>
+			<div style="margin-top:5%;"> 
+				$("#setOnDefault").click(function() {setState($("#select"),"default");});
+				<button id="setOnDefault" type="submit" class="btn btn-default" style="width:600px;">
+					This button sets the main one with the class of first span and show that span.
+				</button>
+			</div>
+			<div style="margin-top:5%;">
+				$("#setOnWorking").click(function() {setState($("#select"),"working");});
+				<button id="setOnWorking" type="submit" class="btn btn-default" style="width:600px;">
+					This button sets the main one with the class of second span and show that span.
+				</button>
+			</div>
+			<div style="margin-top:5%;"> 
+				$("#setOnDefault").click(function() {setState($("#select"),"success");});
+				<button id="setOnSuccess" type="submit" class="btn btn-default" style="width:600px;">
+					This button sets the main one with the class of third span and show that span.
+				</button>
+			</div>
+			<div style="margin-top:5%;">
+				$("#setOnDefault").click(function() {setState($("#select"),"error");}); 
+				<button id="setOnЕrror" type="submit" class="btn btn-default" style="width:600px;">
+					This button sets the main one with the class of fourth span and show that span.
+				</button>
+			</div>
+		  </div>
+		</div>
+	</body>
+</html>
