@@ -1079,16 +1079,16 @@ body{
 
 @media only screen and (min-height: 851px) and (max-height: 900px) and (min-width: 1000px){
     .teaser{
-        height:860px !important;
+        height:920px !important;
     }
     .dribbble{
-        height:800px !important;
+        height:900px !important;
     }
     .about {
-        height:860px !important;
+        height:930px !important;
     }
     #end {
-        height:860px !important;
+        height:900px !important;
     }
     #floatdiv{
         margin-top:31%;
