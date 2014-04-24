@@ -889,7 +889,7 @@ body{
 }
 #dotNav li {
     position: relative;
-    background: none repeat scroll 0 0 #cccccc;
+    background: none repeat scroll 0 0 #5C5C5C;
     border:1px solid #aaaaaa;
     border-radius: 15px 15px 15px 15px;
     cursor: pointer;
