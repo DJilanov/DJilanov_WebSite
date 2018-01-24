@@ -1,14 +1,3 @@
-/**
- * Parallax Scrolling Tutorial
- * For Smashing Magazine
- * July 2011
- *   
- * Author: Richard Shepherd
- * 		   www.richardshepherd.com
- * 		   @richardshepherd   
- */
-
-// On your marks, get set...
 $(document).ready(function(){
 	$('#floatdiv').addFloating(  
         {  

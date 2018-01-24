@@ -25,106 +25,22 @@
  *
  */
 (function (e) {
-  //scroll detection
-  // var flag = false;
-  // var onceFlag = true;
-  // var counter = 1;
-  // var lastScrollTop = 0,
-  //       st,
-  //       direction;
-
-  // function detectDirection() {
-
-  //       st = window.pageYOffset;
-
-  //       if (st > lastScrollTop) {
-  //           direction = "down";
-  //       } else {
-  //           direction = "up";
-  //       }
-
-  //       lastScrollTop = st;
-
-  //       return  direction;
-
-  //   }
-  // $.fn.scrollStopped = function(callback) {           
-  //       $(this).scroll(function(){
-  //           var self = this, $this = $(self);
-  //           if ($this.data('scrollTimeout')) {
-  //             clearTimeout($this.data('scrollTimeout'));
-  //           }
-  //           $this.data('scrollTimeout', setTimeout(callback,1000,self));
-  //       });
-  //   };
-
-  // $(window).scrollStopped(function(){
-  //     //debugger;
-  //     var dir = detectDirection();
-  //     console.log("called");
-  //     if(onceFlag)
-  //     {
-  //       console.log("into");
-  //       if(dir=="up")
-  //       {
-  //         flag=false;
-  //         counter--;
-  //         $("#dotNav li:nth-child("+counter+")").click();
-  //         console.log(counter);
-  //         onceFlag=false;
-  //       }
-  //       if(dir=="down")
-  //       {  
-  //         flag=true;
-  //         counter++;
-  //         $("#dotNav li:nth-child("+counter+")").click();
-  //         console.log(counter);
-  //         onceFlag=false;
-  //       }
-  //       if(counter<1)
-  //       {
-  //         counter=1;
-  //       }
-  //       if(counter>4)
-  //       {
-  //         counter=4;
-  //       }
-  //     }
-  //     setTimeout(function(){onceFlag=true;},2000);
-  // });
-  //scroll stop end
-      /* dot nav */
   $(window).bind('scroll',function(e){
     redrawDotNav();
   });
 
 function redrawDotNav(){
-    var topNavHeight = 50;
-    var numDivs = $('section').length;
+    var topNavHeight = 50,
+        nextPointMargin = 200;
     
     $('#dotNav li a').removeClass('active').parent('li').removeClass('active');     
     $('section').each(function(i,item){
-      var ele = $(item), nextTop;
-      
-      if (typeof ele.next().offset() != "undefined") {
-        nextTop = ele.next().offset().top;
-      }
-      else {
-        nextTop = $(document).height();
-      }
-      
-      if (ele.offset() !== null) {
-        thisTop = ele.offset().top - ((nextTop - ele.offset().top) / numDivs);
-      }
-      else {
-        thisTop = 0;
-      }
-      
-      var docTop = $(document).scrollTop()+topNavHeight;
-      
-      if(docTop >= thisTop && (docTop < nextTop)){
+      var ele = $(item),
+          docTop = $(document).scrollTop() + topNavHeight;
+      if(ele.offset().top + ele.height() - nextPointMargin > docTop && ele.offset().top <= docTop + nextPointMargin) {
         $('#dotNav li').eq(i).addClass('active');
       }
+
     });   
 }
 
